@@ -9,7 +9,7 @@ const CriticScore = ({ score }: Props) => {
     score > 80
       ? "green"
       : score > 60
-      ? "yellow"
+      ? "yellow"    
       : score > 50
       ? "orange"
       : "red";
