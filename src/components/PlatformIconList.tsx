@@ -22,7 +22,7 @@ const PlatformIconList = ({ platfroms }: Props) => {
     pc: FaWindows,
     playstation: FaPlaystation,
     xbox: FaXbox,
-    ninetendo: SiNintendo,
+    nintendo: SiNintendo,
     mac: FaApple,
     linux: FaLinux,
     android: FaAndroid,
@@ -31,7 +31,7 @@ const PlatformIconList = ({ platfroms }: Props) => {
   };
 
   return (
-    <HStack marginY={"10px"}>
+    <HStack flexWrap='wrap' marginY={"10px"}>
       {platfroms.map((platform) => (
         <Icon
           key={platform.id}
