@@ -13,7 +13,6 @@ import {
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import getCroppedImageURL from "../services/image-url";
-import { wrap } from "framer-motion";
 
 interface Props {
   game: Games;
