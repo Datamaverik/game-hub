@@ -23,7 +23,7 @@ const PlatformSelectMenu = ({ selectedPlatform, onSelectPlatform }: Props) => {
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<FaAngleDown />}>
-        {selectedPlatform?.name}
+        {selectedPlatform?.name || "platforms"}
       </MenuButton>
       <MenuList>
         {isLoading && (
