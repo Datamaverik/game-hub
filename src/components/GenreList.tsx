@@ -2,6 +2,7 @@ import {
   Box,
   Button,
   HStack,
+  Heading,
   Image,
   List,
   ListItem,
@@ -24,32 +25,38 @@ const GenreList = ({ onSelectGenre, slectedGenre }: Props) => {
     return <SkeletonText noOfLines={19} spacing="6" skeletonHeight="4" />;
 
   return (
-    <List>
-      {data.map((data) => (
-        <ListItem key={data.id} paddingY="5px">
-          <HStack>
-            <Image
-              boxSize="32px"
-              borderRadius="8px"
-              src={getCroppedImageURL(data.image_background)}
-            ></Image>
-            <Box flexWrap="wrap">
-              <Button
-                onClick={() => onSelectGenre(data)}
-                variant="link"
-                fontSize={data.name === slectedGenre?.name ? "xl" : "lg"}
-                textAlign="left"
-                whiteSpace="normal"
-                wordBreak="break-word"
-                fontWeight={data.name === slectedGenre?.name ? "bold" : "none"}
-              >
-                {data.name}
-              </Button>
-            </Box>
-          </HStack>
-        </ListItem>
-      ))}
-    </List>
+    <>
+      <Heading fontSize='2xl' marginBottom={3}>Genres</Heading>
+      <List>
+        {data.map((data) => (
+          <ListItem key={data.id} paddingY="5px">
+            <HStack>
+              <Image
+                objectFit="cover"
+                boxSize="32px"
+                borderRadius="8px"
+                src={getCroppedImageURL(data.image_background)}
+              ></Image>
+              <Box flexWrap="wrap">
+                <Button
+                  onClick={() => onSelectGenre(data)}
+                  variant="link"
+                  fontSize={data.name === slectedGenre?.name ? "xl" : "lg"}
+                  textAlign="left"
+                  whiteSpace="normal"
+                  wordBreak="break-word"
+                  fontWeight={
+                    data.name === slectedGenre?.name ? "bold" : "none"
+                  }
+                >
+                  {data.name}
+                </Button>
+              </Box>
+            </HStack>
+          </ListItem>
+        ))}
+      </List>
+    </>
   );
 };
 
